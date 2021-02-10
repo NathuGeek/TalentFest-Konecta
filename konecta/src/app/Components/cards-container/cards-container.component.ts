@@ -15,10 +15,11 @@ export class CardsContainerComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getDataId()
+    this.getKeyWord()
   }
-  getDataId() {
-    this.dataService.getDataId().subscribe((res: any) => {
+  getKeyWord() {
+    this.dataService.getKeyWord().subscribe((res: any) => {
+      console.log(res.length);
       return this.data = res;
     })
   }

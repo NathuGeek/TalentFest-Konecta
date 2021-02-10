@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  values = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onKey(event: any) {
+    this.values += event.target.value + ' | ';
   }
 
   out(): void {
