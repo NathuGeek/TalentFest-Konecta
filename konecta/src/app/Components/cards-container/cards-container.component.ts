@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { DataService } from '../../Services/data.service';
 
 @Component({
   selector: 'app-cards-container',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsContainerComponent implements OnInit {
 
-  constructor() { }
+  @Input() Article: any;
+
+    data : any;
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getDataId()
   }
-
+  getDataId() {
+    this.dataService.getDataId().subscribe((res: any) => {
+      return this.data = res;
+    })
+  }
 }
+

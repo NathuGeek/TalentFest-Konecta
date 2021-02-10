@@ -1,1 +1,4 @@
-<app-cards></app-cards>
+<div class="cardContainer">
+    <app-cards *ngFor="let element of data" [element]="element"></app-cards>
+</div>
+
