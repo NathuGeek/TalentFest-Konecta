@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-header',
@@ -6,16 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-
-  values = '';
-
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
 
-  onKey(event: any) {
-    this.values += event.target.value + ' | ';
+  setSearchTerm(term: string) {
+    this.dataService.setSearchTerm(term)
   }
 
   out(): void {

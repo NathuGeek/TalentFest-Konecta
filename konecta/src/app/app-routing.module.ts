@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { from } from 'rxjs';
-import { AppComponent} from './app.component';
 import { LayoutComponent } from './Components/layout/layout.component';
+import { LoginComponent } from './Components/login/login.component';
 
 
 const routes: Routes = [
     {
       path: '',
+      component: LoginComponent
+    },
+    {
+      path: 'home',
       component: LayoutComponent
     }
   ];

@@ -9,7 +9,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { NavComponent } from './Components/nav/nav.component';
 import { CardsContainerComponent } from './Components/cards-container/cards-container.component';
 import { CardsComponent } from './Components/cards/cards.component';
-import { from } from 'rxjs';
+import { LoginComponent } from './Components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,12 +20,14 @@ import { from } from 'rxjs';
     HeaderComponent,
     NavComponent,
     CardsContainerComponent,
-    CardsComponent
+    CardsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
