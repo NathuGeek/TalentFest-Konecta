@@ -9,6 +9,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { NavComponent } from './Components/nav/nav.component';
 import { CardsContainerComponent } from './Components/cards-container/cards-container.component';
 import { CardsComponent } from './Components/cards/cards.component';
+import { from } from 'rxjs';
+import { LimitTextPipe } from './Pipes/limit-text.pipe';
 import { LoginComponent } from './Components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -21,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     CardsContainerComponent,
     CardsComponent,
+    LimitTextPipe,
     LoginComponent
   ],
   imports: [

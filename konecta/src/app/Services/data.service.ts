@@ -20,7 +20,7 @@ export class DataService {
     })
   }
 
-  getDataTags(search = ''): Observable<any[]> {
+  getDataTags(search = '') {
     return this.http.get<any[]>(
       `https://nik.grupokonecta.co:7070/api/pcrc/0/articulos?from=1&size=100&orderby=update&query=${search}&state=1`, 
         {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { debounceTime, distinctUntilChanged} from 'rxjs/operators';
 import { LoginService } from 'src/app/Services/login/login.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { LoginService } from 'src/app/Services/login/login.service';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('formElement') formElement: FormGroupDirective;
   showPass = false;
-  loading = false
   form = new FormGroup({
     user: new FormControl('', [
       Validators.required,
@@ -21,6 +22,10 @@ export class LoginComponent implements OnInit {
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(20)
+    ]),
+    range: new FormControl(0, [
+      Validators.required,
+      Validators.min(100)
     ])
   });
 
@@ -28,7 +33,19 @@ export class LoginComponent implements OnInit {
 
   logo = '/assets/nik_logo.png'
 
+  inputValue: number= 0
+
   ngOnInit(): void {
+    this.range.valueChanges.pipe(
+      debounceTime(200),
+      distinctUntilChanged()
+    ).subscribe((value) => {
+      if(value === 100 && this.form.valid) {
+        this.formElement.onSubmit(undefined)
+      } else {
+        this.range.setValue(0)
+      }
+    })
   }
 
 
@@ -39,13 +56,17 @@ export class LoginComponent implements OnInit {
   get password() {
     return this.form.controls.password;
   }
+
+  get range() {
+    return this.form.get('range');
+  }
   
   logIn() {
-    this.loading === false
     if(this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
+
     this.loginService.logIn(this.form.value).subscribe(
       () => {
         this.router.navigate(['home']);

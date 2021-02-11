@@ -13,4 +13,8 @@ export class LoginService {
     return of({token: ''})
     // return this.http.post<UserLoginResponse>('' , credentials)
   }
+
+  logOut() {
+    return of({})
+  }
 }
