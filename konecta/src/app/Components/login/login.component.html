@@ -1,23 +1,26 @@
 <div>
     <img [src]="logo" alt="logo Nik">
-    <div>
-        <p>Estar <span>conectado</span> es mantenerse <span>Informado</span></p>
+    <div class="phrase1">
+        <p>Estar <span>conectado</span> es mantenerse <span>informado</span></p>
     </div>
     <form class="form" (ngSubmit)="logIn()" [formGroup]="form" #formElement="ngForm">
         <div>
-          <input type="text" formControlName="user" placeholder="Usuario">
+          <input class="input" type="text" formControlName="user" placeholder="Usuario">
           <small *ngIf="user.touched && user.errors as errors">Este campo es requerido</small>
         </div>
         <div>
+          <br>
           <div>
             <input class="input" [type]="showPass ? 'text' : 'password' " formControlName="password" placeholder="Contraseña">
+            <br>
             <i (click)="togglePass()">Mostrar/ocultar contrasena</i>
           </div>
           <small *ngIf="password.touched && password.errors as errors">Este campo es requerido</small>
         </div>
+            <br>
           <div class="flex-container">
-            <input formControlName="range" type="range" min="0" max="100" value="0">
-            <p>Desliza para ingresar</p>
+            <input class="slide" formControlName="range" type="range" min="0" max="100" value="0">
+            <p class="phrase2">Desliza para ingresar</p>
           </div>
       </form>
 </div>
