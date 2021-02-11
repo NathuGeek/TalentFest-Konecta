@@ -1,5 +1,5 @@
 <div class="cardContainer">
     <div id="contenedor"></div>
-    <app-cards *ngFor="let element of data$" [element]="element" (click)='show(element)'></app-cards>
+    <app-cards *ngFor="let element of (data$ | async)" [element]="element" (click)='show(element)'></app-cards>
 </div>
 
