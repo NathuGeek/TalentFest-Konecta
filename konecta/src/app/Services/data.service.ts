@@ -14,11 +14,12 @@ export class DataService {
     this.setSearchTerm('')
   }
   
-  setSearchTerm(term: string) {
+  setSearchTerm(term: any) {
     this.getDataTags(term).subscribe((data: any[]) => {
       this._data.next(data)
     })
   }
+    
 
   getDataTags(search = '') {
     return this.http.get<any[]>(
