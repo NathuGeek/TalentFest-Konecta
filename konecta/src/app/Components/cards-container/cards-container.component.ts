@@ -12,11 +12,17 @@ export class CardsContainerComponent implements OnInit {
   @Input() element: any;
 
   data$: Observable<any[]>
-  constructor(private dataService: DataService) { }
+
+  public criteria = "";
+  constructor(private dataService: DataService) {
+    
+   }
+
 
   ngOnInit(): void {
-    this.data$ = this.dataService.data$.pipe(
-      map((res) => {
+    
+  this.dataService.setDataCards().pipe(
+      map((res: any) => {
         let image = '';
         for (let i= 0; i < res.length; i++){
           const curr = JSON.parse(res[i]["obj"] || '{}').ops || [];
@@ -27,11 +33,12 @@ export class CardsContainerComponent implements OnInit {
             }
           }
         }
-      return res
+      return console.log(res)
       })
     )
 
   }
+  
 
 }
 

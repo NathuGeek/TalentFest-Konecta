@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({ 
   providedIn: 'root'
@@ -9,15 +10,45 @@ export class DataService {
   public dataToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pa2NvcGlhIiwiaWF0IjoxNjEyODQwMzk4LCJleHAiOjE2MTMzNTg3OTh9.MCSp3rjPSsFgxmxbB-sm0jrt97t8BI7GYEwG_ghVezQ'
   private _data = new BehaviorSubject<any[]>([])
   public data$ = this._data.asObservable()
+  
 
   constructor(private http: HttpClient) {
-    this.setSearchTerm('')
+    // this.setSearchTerm('')
+    
   }
   
-  setSearchTerm(term: string) {
-    this.getDataTags(term).subscribe((data: any[]) => {
+ /*  public resSearch(key: any){
+   return this._data.next(key);
+  }
+
+  setSearchTerm(term: any) {
+    return this.getDataTags(term).subscribe((data: any[]) => {
       this._data.next(data)
     })
+    
+  } */
+
+  setSearchTerm(criteria){
+    console.log(criteria)
+    return this.http.get(`https://nik.grupokonecta.co:7070/api/pcrc/0/articulos?from=1&size=100&orderby=update&query=${criteria}&state=1`, {
+      headers: new HttpHeaders({
+      'Content-Type':'application/json,charset=utf-8',
+      Authorization: this.dataToken
+      })
+    })
+    .pipe(map(data => data));
+    
+  }
+
+  setDataCards(){
+    
+    return this.http.get(`https://nik.grupokonecta.co:7070/api/pcrc/0/articulos?from=1&size=100&orderby=update&query=Tarjetas de credito&state=1`, {
+      headers: new HttpHeaders({
+      'Content-Type':'application/json,charset=utf-8',
+      Authorization: this.dataToken
+      })
+    })
+   
   }
 
   getDataTags(search = '') {

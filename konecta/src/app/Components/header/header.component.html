@@ -2,8 +2,8 @@
     <a routerLink="home">
       <img src='/assets/nik_logo.png'>
     </a>
-
-    <input (change)="setSearchTerm($event.target.value)" type="search" class="search-bar" placeholder="🔍 search">
+    <input (keyup)="setSearchTerm($event.target.value)" #search type="text" class="search-bar" placeholder="🔍 Buscar">
+    <!-- <input (change)="setSearchTerm($event.target.value)" type="search" class="search-bar" placeholder="🔍 search"> -->
       <div class="iconos">
     <button><i class="fas fa-bell"></i></button>
     <p>Juanita Garcia</p>

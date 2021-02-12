@@ -12,11 +12,26 @@ export class HeaderComponent implements OnInit {
   constructor(private dataService: DataService, private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+  //  this.dataService.setSearchTerm().subscribe(key => this.search = key);
   }
 
-  setSearchTerm(term: string) {
-    this.dataService.setSearchTerm(term)
-  }
+   public info: any
+  search: string
+  term: any
+
+  setSearchTerm(_criteria) {
+    
+    // this.dataService.setSearchTerm(this.term)
+    console.log(_criteria)
+    this.dataService.setSearchTerm(_criteria)
+      .subscribe(response => {
+        this.info = response['data'];
+      });};
+
+  
+      
+    
+  
 
   out(): void {
     if(document.getElementById('open-close').style.display='none'){document.getElementById('open-close').style.display='block'}
