@@ -63,6 +63,7 @@ Se puede visualizar la página en este link: (https://nik-konecta.netlify.app/),
 
 Más información: (https://talentfest.laboratoria.la/bogota)
 
-visualizar la Demo en este link: (https://youtu.be/7iHyJyayl20?t=3840)
+Visualizar la Demo en este link: (https://youtu.be/7iHyJyayl20?t=3840)
+
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/56327014/108880565-6a2e5200-75d0-11eb-934e-c8e87b541a81.png" width="800"> </p>
