@@ -1,6 +1,6 @@
 # Plataforma Nik - Konecta
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/56327014/108874263-fd17be00-75c9-11eb-949c-3b29a5835c7e.png" width="500"> </p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/56327014/108874263-fd17be00-75c9-11eb-949c-3b29a5835c7e.png" width="450"> </p>
 
 
 ## Índice
@@ -51,20 +51,18 @@ Y se hizo uso de una API en Postman, la cual obtuvimos con el uso de métodos GE
 
 Se puede visualizar la página en este link: (https://nik-konecta.netlify.app/), accediendo con juana.g@konecta.com y la contraseña 12345
 
-#### Demo Night 
+
+## 5. Contribuyentes
+
+#### Squad
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/65794191/108213138-b5da8a80-70fc-11eb-816d-c49125a66bed.jpg" width="800"> </p>
+
+
+## Demo Night 
 
 Más información: (https://talentfest.laboratoria.la/bogota)
 
 visualizar la Demo en este link: (https://youtu.be/7iHyJyayl20?t=3840)
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/56327014/108880565-6a2e5200-75d0-11eb-934e-c8e87b541a81.png" width="800"> </p>
-
-
-## 5. Contribuyentes
-
-#### Squad
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/65794191/108213138-b5da8a80-70fc-11eb-816d-c49125a66bed.jpg" width="8000"> </p>
-
-
-
