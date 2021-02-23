@@ -64,7 +64,7 @@ visualizar la Demo en este link: (https://youtu.be/7iHyJyayl20?t=3840)
 
 #### Squad
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/65794191/108213138-b5da8a80-70fc-11eb-816d-c49125a66bed.jpg" width="1000"> </p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/65794191/108213138-b5da8a80-70fc-11eb-816d-c49125a66bed.jpg" width="8000"> </p>
 
 
 
